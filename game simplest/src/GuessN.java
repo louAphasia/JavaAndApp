@@ -28,6 +28,6 @@ else
 	System.out.println("Would you like to play again? yes =y no =n");
 		playAgain=scan.next();
 	}while(playAgain.equalsIgnoreCase("y"));
-
+scan.close();
 }
 }
