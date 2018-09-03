@@ -61,9 +61,7 @@ public class Main extends Application {
 	root.setId("background");
 	Scene scene = new Scene(root, 900, 250);
 	// load JavaFX CSS style
-	scene.getStylesheets()
-	.add(getClass().getResource("/buttoncat.css")
-	.toExternalForm());
+	scene.getStylesheets().add(getClass().getResource("/buttoncat.css").toExternalForm());
 	VBox leftControlPane = new VBox(10);
 	leftControlPane.setPadding(new Insets(0, 10, 20, 15));
 	// Create radio buttons for linear,
