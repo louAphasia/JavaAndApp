@@ -14,7 +14,7 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-import javafx.css.*;
+
 import javafx.geometry.Bounds;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -61,7 +61,8 @@ public class Main extends Application {
 	root.setId("background");
 	Scene scene = new Scene(root, 900, 250);
 	// load JavaFX CSS style
-	scene.getStylesheets().add(getClass().getResource("/buttoncat.css").toExternalForm());
+	
+	
 	VBox leftControlPane = new VBox(10);
 	leftControlPane.setPadding(new Insets(0, 10, 20, 15));
 	// Create radio buttons for linear,
@@ -69,16 +70,16 @@ public class Main extends Application {
 	ToggleGroup group = new ToggleGroup();
 	RadioButton easeLinearBtn = new RadioButton("Black");
 	easeLinearBtn.setUserData(mycats[0]);
-	easeLinearBtn.getStyleClass().add("option-button");
+	
 	easeLinearBtn.setSelected(true);
 	easeLinearBtn.setToggleGroup(group);
 	RadioButton easeInBtn = new RadioButton("White");
 	easeInBtn.setUserData(mycats[1]);
-	easeInBtn.getStyleClass().add("option-button");
+	
 	easeInBtn.setToggleGroup(group);
 	RadioButton easeOutBtn = new RadioButton("Grey");
 	easeOutBtn.setUserData(mycats[2]);
-	easeOutBtn.getStyleClass().add("option-button");
+	
 	easeOutBtn.setToggleGroup(group);
 	// hyperlink
 	Hyperlink carInfoLink = createHyperLink(group);
@@ -92,9 +93,9 @@ public class Main extends Application {
 	// Create button controls to move car forward or backward.
 	HBox hbox = new HBox(10);
 	Button leftBtn = new Button("<");
-	leftBtn.getStyleClass().add("nav-button");
+	
 	Button rightBtn = new Button(">");
-	rightBtn.getStyleClass().add("nav-button");
+
 	FlowPane controlPane = new FlowPane();
 	FlowPane.setMargin(hbox, new Insets(0, 5, 10, 10));
 	hbox.getChildren().addAll(leftBtn, rightBtn);
@@ -164,16 +165,16 @@ public class Main extends Application {
 	private Hyperlink createHyperLink(ToggleGroup chosenCarToggle) {
 	Hyperlink carInfoLink = new Hyperlink("Car Information");
 	Popup carInfoPopup = new Popup();
-	carInfoPopup.getScene().getStylesheets()
-	.add(getClass().getResource("/buttoncat.css")
-	.toExternalForm());
+
+	
+
 	carInfoPopup.setAutoHide(true);
 	carInfoPopup.setHideOnEscape(true);
 	Arc pointer = new Arc(0, 0, 20, 20, -20, 40);
 	pointer.setType(ArcType.ROUND);
 	Rectangle msgRect = new Rectangle( 18, -20, 200.5, 150);
 	Shape msgBubble = Shape.union(pointer, msgRect);
-	msgBubble.getStyleClass().add("message-bubble");
+
 	TextFlow textMsg = new TextFlow();
 	textMsg.setPrefWidth(msgRect.getWidth() -5);
 	textMsg.setPrefHeight(msgRect.getHeight() -5);
